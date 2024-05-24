@@ -1,6 +1,6 @@
 import { createRequestHandler } from '../shared/responseGenerator';
 
-const { handleRequest } = createRequestHandler();
+const { handleRequest } = createRequestHandler("Bun");
 
 async function lambdaHandler(_request: Request): Promise<Response> {
   const { body, headers, statusCode } = await handleRequest();
