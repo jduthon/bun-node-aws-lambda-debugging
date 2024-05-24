@@ -1,0 +1,22 @@
+{
+  "name": "node-lambda",
+  "version": "1.0.0",
+  "description": "A simple node lambda to test out performance differences between bun and node lambdas",
+  "main": "index.mjs",
+  "scripts": {
+    "build": "npm run clean && mkdir dist && tsc",
+    "build:aws": "npm run build && npm run zip && echo \"dist/index.zip ready to be uploaded to AWS\"",
+    "clean": "rm -rf dist",
+    "start": "sam local start-api",
+    "zip": "rm -f dist/index.zip && zip -r dist/index.zip dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.12.12",
+    "esbuild": "^0.21.3",
+    "typescript": "^5.4.5"
+  }
+}
